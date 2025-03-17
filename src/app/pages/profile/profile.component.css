@@ -1,6 +1,6 @@
 body {
     background: linear-gradient(to right, #1e1e1e, #2a2a2a);
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: "Arial", sans-serif;
   }
   
@@ -41,7 +41,7 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 2px solid #4caf50;
+    border: 2px solid #ffffff;
     transition: transform 0.3s;
   }
   
@@ -53,7 +53,7 @@ body {
     position: absolute;
     bottom: 0;
     right: -10px;
-    background: #4caf50;
+    background: #353535;
     color: white;
     border-radius: 50%;
     padding: 5px;
@@ -67,7 +67,7 @@ body {
   .form-group {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 19px;
   }
   
   .form-group input,
@@ -91,15 +91,15 @@ body {
     width: 100%;
     padding: 10px;
     border: none;
-    border-radius: 5px;
-    background: #4caf50;
-    color: white;
+    border-radius: 15px;
+    background: #f5f8ff;
+    color: rgb(4, 4, 4);
     cursor: pointer;
     transition: background 0.3s ease-in-out;
   }
   
   .save-btn:hover {
-    background: #66bb6a;
+    background: #3b75e1;
   }
   
   @keyframes fadeIn {
