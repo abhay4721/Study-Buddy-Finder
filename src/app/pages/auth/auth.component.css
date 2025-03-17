@@ -1,10 +1,14 @@
+/* Hide default file input */
+input[type="file"] {
+  display: none;
+}
 /* Container with smooth background transition */
 .auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #020a18, #1a2837);
+  background: linear-gradient(to right, #000610, #060e15);
   animation: fadeIn 1s ease-in-out;
 }
 
@@ -14,7 +18,7 @@
   padding: 30px;
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
   /*backdrop-filter: blur(10px); /* Blur Effect */
-  border-radius: 12px;
+  border-radius: 15px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
   text-align: center;
   transition: transform 0.3s ease-in-out;
@@ -70,14 +74,17 @@ h2 {
 .input-row {
   display: flex;
   gap: 15px;
+  width: 100%;
+  align-items: center; /* Ensure inputs align properly */
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 15px;
 }
 
 .input-group {
-  flex: 1;
+  flex: 1; /* Make both input fields equal in width */
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .input-group label {
@@ -86,14 +93,35 @@ h2 {
   margin-bottom: 5px;
 }
 
-input {
+.input-group input {
+  width: 100%;
   padding: 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 15px;
   background: #333;
   color: white;
   outline: none;
   transition: 0.3s ease;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+  .input-row {
+    flex-direction: column; /* Stack inputs on small screens */
+  }
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  background: #333;
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
 input:focus {
@@ -111,7 +139,7 @@ button {
   font-size: 16px;
   font-weight: bold;
   border: none;
-  border-radius: 6px;
+  border-radius: 16px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background 0.3s ease;
 }
