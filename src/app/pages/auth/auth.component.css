@@ -13,7 +13,7 @@
   width: 500px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
-  backdrop-filter: blur(10px); /* Blur Effect */
+  /*backdrop-filter: blur(10px); /* Blur Effect */
   border-radius: 12px;
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
   text-align: center;

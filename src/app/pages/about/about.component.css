@@ -1,6 +1,6 @@
 /* About Container */
 .about-container {
-    background: linear-gradient(135deg, #1a1a1a, #000000); /* Black gradient */
+  background: linear-gradient(to right, #000610, #060e15);
     min-height: 100vh;
     padding: 2rem;
     color: #ffffff;

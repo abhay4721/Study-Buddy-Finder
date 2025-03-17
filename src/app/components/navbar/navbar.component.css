@@ -1,6 +1,6 @@
 /* Navbar Styling */
 .navbar {
-    background: linear-gradient(135deg, #1a1a1a, #333333); /* Black gradient */
+  background: linear-gradient(to right, #020a18, #1a2837);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     padding: 1rem 0; /* Add padding for better spacing */
     transition: all 0.3s ease; /* Smooth transition for hover effects */
