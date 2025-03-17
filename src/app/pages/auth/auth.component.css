@@ -1,82 +1,146 @@
-/* Dark Theme Styles */
+/* Container with smooth background transition */
 .auth-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #121212; /* Dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #020a18, #1a2837);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Auth Box */
+.auth-box {
+  width: 500px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent */
+  backdrop-filter: blur(10px); /* Blur Effect */
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Light Border */
+}
+
+.auth-box:hover {
+  transform: scale(1.02);
+}
+
+
+/* Heading */
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* Profile Upload */
+.profile-upload {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.profile-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #aaa;
+  border: 2px dashed #555;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profile-circle:hover {
+  background: #444;
+}
+
+.profile-preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Input Fields */
+.input-row {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  background: #444;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: #0056b3;
+}
+
+/* Toggle Text */
+.toggle-text {
+  color: #bbb;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.toggle-text:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  .auth-box {
-    background: #1e1e1e;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-    width: 320px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  h2 {
-    color: #ffffff;
-    margin-bottom: 20px;
-  }
-  
-  /* Input Styles */
-  .input-group {
-    position: relative;
-    margin-bottom: 20px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 10px;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #ffffff;
-    color: #ffffff;
-    outline: none;
-    font-size: 16px;
-  }
-  
-  .input-group label {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    color: #aaa;
-    transition: 0.3s;
-  }
-  
-  .input-group input:focus + label,
-  .input-group input:valid + label {
-    top: -10px;
-    font-size: 12px;
-    color: #00ffcc; /* Highlight color */
-  }
-  
-  /* Button */
-  .btn {
-    width: 100%;
-    padding: 10px;
-    background: #00ffcc;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .btn:hover {
-    background: #008866;
-  }
-  
-  /* Signup Text */
-  .signup-text {
-    margin-top: 10px;
-    color: #ffffff;
-  }
-  
-  .signup-text a {
-    color: #00ffcc;
-    text-decoration: none;
-  }
-  
+}

@@ -1,18 +1,50 @@
 <div class="auth-container">
-    <div class="auth-box">
-      <h2>Login</h2>
-      <form>
+  <div class="auth-box">
+    <h2>{{ isSignUp ? 'Create an Account' : 'Welcome Back' }}</h2>
+
+    <form>
+      <!-- Profile Upload for Sign-Up -->
+      <div *ngIf="isSignUp" class="profile-upload">
+        <label for="profile-pic">
+          <input type="file" id="profile-pic" (change)="uploadProfilePic($event)">
+          <div class="profile-circle">
+            <img *ngIf="profilePic" [src]="profilePic" class="profile-preview" />
+            <span *ngIf="!profilePic">+</span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Input Fields in Rows -->
+      <div class="input-row" *ngIf="isSignUp">
         <div class="input-group">
-          <input type="email" required />
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your full name">
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-group">
           <label>Email</label>
+          <input type="email" placeholder="Enter your email">
         </div>
+      </div>
+
+      <div class="input-row">
         <div class="input-group">
-          <input type="password" required />
           <label>Password</label>
+          <input type="password" placeholder="Enter password">
         </div>
-        <button type="submit" class="btn">Login</button>
-        <p class="signup-text">Don't have an account? <a href="#">Sign Up</a></p>
-      </form>
-    </div>
+        <div class="input-group" *ngIf="isSignUp">
+          <label>Confirm Password</label>
+          <input type="password" placeholder="Confirm password">
+        </div>
+      </div>
+
+      <button type="submit" class="btn">{{ isSignUp ? 'Sign Up' : 'Login' }}</button>
+
+      <p (click)="toggleForm()" class="toggle-text">
+        {{ isSignUp ? 'Already have an account? Login' : 'New user? Sign up here' }}
+      </p>
+    </form>
   </div>
-  
+</div>
