@@ -1,0 +1,72 @@
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(135deg, #1a1a1a, #333333); /* Black gradient */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    padding: 1rem 0; /* Add padding for better spacing */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem; /* Larger font size for brand */
+    font-weight: bold; /* Bold text */
+    color: #ffffff !important; /* White text color */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .navbar-brand:hover {
+    color: #00bcd4 !important; /* Cyan color on hover */
+  }
+  
+  .navbar-toggler {
+    border: none; /* Remove default border */
+    outline: none; /* Remove outline */
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Custom white toggler icon */
+  }
+  
+  .navbar-nav {
+    gap: 1rem; /* Add spacing between nav items */
+  }
+  
+  .nav-link {
+    color: #ffffff !important; /* White text color */
+    font-weight: 500; /* Medium font weight */
+    position: relative; /* For hover effect */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .nav-link:hover {
+    color: #00bcd4 !important; /* Cyan color on hover */
+  }
+  
+  /* Add an animated underline effect on hover */
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00bcd4; /* Cyan underline */
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease; /* Smooth width transition */
+  }
+  
+  .nav-link:hover::after {
+    width: 100%; /* Full width on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .navbar-nav {
+      background: linear-gradient(135deg, #1a1a1a, #333333); /* Black gradient for mobile menu */
+      padding: 1rem; /* Add padding for better spacing */
+      border-radius: 10px; /* Rounded corners */
+      margin-top: 1rem; /* Add margin for separation */
+    }
+  
+    .nav-link {
+      text-align: center; /* Center align nav items */
+    }
+  }
