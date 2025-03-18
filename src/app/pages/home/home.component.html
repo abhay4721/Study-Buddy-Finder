@@ -3,12 +3,8 @@
     <h1>Welcome to Study Buddy Finder 🎓</h1>
     <p>Connect with study partners, share knowledge, and achieve your academic goals together.</p>
     <div class="buttons">
-      <a routerLink="/find-buddy">
-        <button class="btn">Find a Study Buddy</button>
-      </a>
-      <a routerLink="/chat">
-        <button class="btn btn-outline">Start a Chat</button>
-      </a>
+      <button class="btn" (click)="goToFindBuddy()">Find a Study Buddy</button>
+      <button class="btn btn-outline" (click)="goToChat()">Start a Chat</button>
     </div>
   </div>
 
