@@ -6,11 +6,11 @@ const User = require("../models/User");
 
 const router = express.Router();
 
-// 🔹 User Signup Route
+// 🔹 Signup Route
 router.post("/signup", [
   check("name", "Name is required").not().isEmpty(),
   check("email", "Enter a valid email").isEmail(),
-  check("password", "Password must be 6+ characters").isLength({ min: 6 })
+  check("password", "Password must be at least 6 characters").isLength({ min: 6 })
 ], async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
@@ -35,14 +35,8 @@ router.post("/signup", [
   }
 });
 
-// 🔹 User Login Route
-router.post("/login", [
-  check("email", "Enter a valid email").isEmail(),
-  check("password", "Password is required").exists()
-], async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
-
+// 🔹 Login Route
+router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
     let user = await User.findOne({ email });
