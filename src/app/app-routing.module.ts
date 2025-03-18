@@ -6,6 +6,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { AuthComponent } from './pages/auth/auth.component';
 import { AboutComponent } from './pages/about/about.component';
+import { SignupComponent } from '../pages/auth/signup/signup.component';
+import { LoginComponent } from '../pages/auth/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route
@@ -14,7 +16,10 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'auth', component: AuthComponent },
   { path: 'about', component: AboutComponent },
-  { path: '**', redirectTo: '' } // Redirect unknown routes to home
+  { path: '**', redirectTo: '' },// Redirect unknown routes to home
+  { path: 'login', component: LoginComponent},
+  { path: 'signup', component: SignupComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' }  // Redirect to login by default
 ];
 
 @NgModule({
